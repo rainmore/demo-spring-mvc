@@ -9,6 +9,8 @@ The demo is built on
 
 - Tomcat 7.0.41
 - Spring 3.2
+- Jackson Json 2.2
+
 
 
 
