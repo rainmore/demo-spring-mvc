@@ -5,6 +5,9 @@
 *.war
 *.ear
 
-.idea/
-*.iml
-target/
+/.idea/
+/*.iml
+/target/
+
+/.gradle/
+/build/
