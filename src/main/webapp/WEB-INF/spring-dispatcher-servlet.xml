@@ -13,6 +13,6 @@
         <property name="suffix" value=".jsp"/>
     </bean>
 
-    <import resource="config/spring-mvc.xml" />
+    <import resource="config/mvc.xml" />
 
 </beans>
