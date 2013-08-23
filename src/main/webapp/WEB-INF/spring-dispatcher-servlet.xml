@@ -14,5 +14,6 @@
     </bean>
 
     <import resource="config/mvc.xml" />
+    <import resource="config/locale.xml" />
 
 </beans>
