@@ -8,12 +8,8 @@
 
     <context:component-scan base-package="net.rainmore.web"/>
 
-    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-        <property name="prefix" value="/WEB-INF/pages/"/>
-        <property name="suffix" value=".jsp"/>
-    </bean>
-
     <import resource="config/mvc.xml" />
     <import resource="config/locale.xml" />
+    <import resource="config/view.xml" />
 
 </beans>
