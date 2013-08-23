@@ -1,0 +1,63 @@
+apply plugin:'java'
+apply plugin:'idea'
+apply plugin: 'maven'
+apply plugin: 'jetty'
+apply plugin: 'war'
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+//    dependencies {
+//        classpath("org.springframework.build.gradle:propdeps-plugin:0.0.3")
+//        classpath("org.springframework.build.gradle:docbook-reference-plugin:0.2.6")
+//    }
+}
+
+
+sourceCompatibility = 1.7
+targetCompatibility=1.7
+
+description='web'
+group = 'net.rainmore.'
+version = '1.0'
+
+ext.springVersion='3.2.3.RELEASE'
+
+repositories {
+//    flatDir { dirs "lib" }
+    mavenCentral()
+}
+
+configurations {
+    bootstrap
+}
+
+dependencies {
+//    def thymeleafVersion  = '2.0.17'
+
+    compile group: 'org.springframework', name: 'spring-core', version: project.ext.springVersion
+    compile group: 'org.springframework', name: 'spring-web', version: project.ext.springVersion
+    compile group: 'org.springframework', name: 'spring-webmvc', version: project.ext.springVersion
+
+//    compile group: 'jstl', name: 'jstl', vesion: '1.2'
+//    compile group: 'javax.servlet.jsp', name: 'jsp-api', version: '2.1'
+    providedCompile group: 'javax.servlet', name: 'servlet-api', version: '2.5'
+
+
+//    compile group: 'log4j', name: 'log4j', version:'1.2.16'
+//    compile group: 'org.slf4j', name: 'slf4j-log4j12', version: '1.6.6'
+
+    testCompile group: 'org.springframework', name: 'spring-test', version: project.ext.springVersion
+    testCompile group: 'junit', name: 'junit', version: '4.+'
+}
+
+test {
+    testLogging {
+        showStandardStreams = true
+    }
+}
+
+//task aa << {
+//    println project.ext.springVersion
+//}
