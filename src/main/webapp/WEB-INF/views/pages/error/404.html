@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="layouts/error"
         >
 <head>
-
+    <title th:text="#{error.404.title}">Error 404</title>
 </head>
 <body>
-<div>
+<div layout:fragment="content">
     <h1 th:text="#{error.404.title}">Error 404</h1>
     <p th:text="#{error.404.message}">Error 404</p>
 </div>
