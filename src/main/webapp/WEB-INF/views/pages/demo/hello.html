@@ -1,19 +1,16 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="layouts/default"
         >
-<head>
-    <script type="text/javascript" src="../resources/js/jquery.min.js" th:src="@{'/js/jquery.min.js'}" />
-
-</head>
+<head></head>
 <body>
-<div>
+<div layout:fragment="content">
     <div class="hero-unit pagination-centered">
         <h1 th:text="#{project.title}">Hello!</h1>
         <p th:text="${hello}">Lorem ipsum2321 21 212222222</p>
     </div>
 </div>
-
-<footer class="black" th:include="layouts/partials/footer :: footer"></footer>
 </body>
 </html>

@@ -1,9 +1,24 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <title></title>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:include="layouts/partials/head :: head">
+    <title>Home</title>
 </head>
 <body>
+<div id="loading_layer" style="display:none"><img src="img/ajax_loader.gif" th:src="@{'/img/ajax_loader.gif'}" alt="" /></div>
 
+
+<div id="maincontainer" class="clearfix" >
+    <div id="contentwrapper">
+        <div class="main_content">
+            <div class="row-fluid">
+                <div class="span12" layout:fragment="content">
+                    <p>Page content goes here</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer th:include="layouts/partials/footer :: footer"></footer>
+</div>
 </body>
 </html>
