@@ -1,0 +1,80 @@
+apply plugin:'java'
+apply plugin:'idea'
+apply plugin: 'maven'
+apply plugin: 'jetty'
+apply plugin: 'war'
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+//    dependencies {
+//        classpath("org.springframework.build.gradle:propdeps-plugin:0.0.3")
+//        classpath("org.springframework.build.gradle:docbook-reference-plugin:0.2.6")
+//    }
+}
+
+
+sourceCompatibility = 1.7
+targetCompatibility=1.7
+
+description='web'
+group = 'net.rainmore.'
+version = '1.0'
+
+project.ext {
+    springVersion    = '3.2.3.RELEASE'
+    thymeLeafVersion = '2.0.17'
+}
+
+
+
+repositories {
+//    flatDir { dirs "lib" }
+    mavenCentral()
+}
+
+configurations {
+    bootstrap
+}
+
+dependencies {
+
+
+    compile group: 'org.springframework', name: 'spring-core', version: project.ext.springVersion
+    compile group: 'org.springframework', name: 'spring-web', version: project.ext.springVersion
+    compile group: 'org.springframework', name: 'spring-webmvc', version: project.ext.springVersion
+
+    providedCompile group: 'javax.servlet', name: 'servlet-api', version: '2.5'
+
+    // tools
+    compile group: 'joda-time', name: 'joda-time', version: '2.3'
+    compile group: 'org.jadira.usertype', name: 'usertype.core', version: '3.1.0.CR8'
+    compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.1'
+
+    // thymeleaf
+    compile group: 'org.thymeleaf', name: 'thymeleaf', version: project.ext.thymeLeafVersion
+    compile group: 'org.thymeleaf', name: 'thymeleaf-spring3', version: project.ext.thymeLeafVersion
+    compile group: 'nz.net.ultraq.thymeleaf', name: 'thymeleaf-layout-dialect', version: '1.1.1'
+    compile group: 'org.thymeleaf.extras', name: 'thymeleaf-extras-conditionalcomments', version: '2.0.0'
+    compile group: 'net.sourceforge.html5valdialect', name: 'html5valdialect', version: '1.0.0-beta3'
+
+
+    compile group: 'log4j', name: 'log4j', version:'1.2.17'
+    compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.5'
+    compile group: 'org.slf4j', name: 'slf4j-log4j12', version: '1.7.5'
+
+    testCompile group: 'org.springframework', name: 'spring-test', version: project.ext.springVersion
+    testCompile group: 'junit', name: 'junit', version: '4.+'
+}
+
+test {
+    testLogging {
+        showStandardStreams = true
+    }
+}
+
+task aa << {
+    println project.ext.springVersion
+    println project.ext.thymeLeafVersion
+}
