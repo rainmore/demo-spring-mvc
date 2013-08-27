@@ -8,6 +8,6 @@
 /.idea/
 *.iml
 /target/
-
+/classes/
 /build/
 /.gradle
