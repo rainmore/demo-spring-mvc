@@ -23,8 +23,10 @@ group = 'net.rainmore.'
 version = '1.0'
 
 project.ext {
-    springVersion    = '3.2.3.RELEASE'
+    springVersion = '3.2.3.RELEASE'
+    springSecureVersion = '3.1.4.RELEASE'
     thymeLeafVersion = '2.0.17'
+
 }
 
 
@@ -44,6 +46,11 @@ dependencies {
     compile group: 'org.springframework', name: 'spring-core', version: project.ext.springVersion
     compile group: 'org.springframework', name: 'spring-web', version: project.ext.springVersion
     compile group: 'org.springframework', name: 'spring-webmvc', version: project.ext.springVersion
+
+    compile group: 'org.springframework.security', name: 'spring-security-core', version: project.ext.springSecureVersion
+    compile group: 'org.springframework.security', name: 'spring-security-web', version: project.ext.springSecureVersion
+    compile group: 'org.springframework.security', name: 'spring-security-config', version: project.ext.springSecureVersion
+    compile group: 'org.springframework.security', name: 'spring-security-taglibs', version: project.ext.springSecureVersion
 
     providedCompile group: 'javax.servlet', name: 'servlet-api', version: '2.5'
 

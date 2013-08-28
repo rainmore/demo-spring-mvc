@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="layouts/default"
+        >
+<head>
+    <title>Demo Hello World</title>
+</head>
+<body>
+<div layout:fragment="content">
+    <div class="hero-unit pagination-centered">
+        <h1 th:text="#{project.title}">Hello!</h1>
+        <p th:text="${message}">Lorem ipsum2321 21 212222222</p>
+    </div>
+</div>
+</body>
+</html>

@@ -6,8 +6,8 @@ public class ViewHelpers {
     private static String defaultTemplatePath = "templates";
     private static String defaultTemplate = "default";
 
-    public static String buildViewPath(String viewPage) {
-        return String.format("%s/%s", defaultViewPath, viewPage);
+    public static String buildViewPath(String viewPage, String viewPath) {
+        return String.format("%s/%s/%s", defaultViewPath, viewPath, viewPage);
     }
 
     public static String buildTemplatePath(String template) {
